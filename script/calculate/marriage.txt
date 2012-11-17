@@ -1,0 +1,182 @@
+function Jz_Script_yszs (role, Item )
+	
+	local i = CheckBagItem(role,3024)
+	local k = ChaIsBoat(role)
+	local hp = Hp(role)
+	local mxhp = Mxhp(role)
+	local sp = Sp(role)
+	local mxsp = Mxsp(role)
+	if sp < mxsp or hp < mxhp then 
+		SystemNotice (role, "Visiting the church is a tiring process, please keep your hp and sp at 100%")
+		UseItemFailed ( role )
+		return
+	end 
+	if k == 0 then
+		if i > 0 then
+			local j = DelBagItem(role,3024,1)
+			if j == 1 then
+				MoveCity(role,"Church")
+				return
+			end
+		end
+	else
+		UseItemFailed ( role )
+	end
+		
+end
+
+function Jz_Script_yszs (role, Item )
+	
+	local Now_Week = os.date("%w")
+	local Now_WeekNum = tonumber(Now_Week)
+	local Now_Time = os.date("%H")
+	local Now_TimeNum = tonumber(Now_Time)
+	local Now_Miniute= os.date("%M")	
+	local Now_Miniute= tonumber(Now_Miniute)
+	local CheckDateNum = Now_WeekNum * 10000 + Now_TimeNum * 100+Now_Miniute
+
+	if CheckDateNum < 11700  then
+		SystemNotice ( role , "不要着急哦，教堂还没开门，请在每星期一晚上17点到17点10分之间使用哦" )
+		UseItemFailed ( role )
+		return
+	end
+	
+	if CheckDateNum > 11710 then
+		SystemNotice ( role , "Church is now closed, please wait until next Monday night" )
+		UseItemFailed ( role )
+		return
+	end
+
+	local i = CheckBagItem(role,3024)
+	local k = ChaIsBoat(role)
+	local hp = Hp(role)
+	local mxhp = Mxhp(role)
+	local sp = Sp(role)
+	local mxsp = Mxsp(role)
+	if sp < mxsp or hp < mxhp then 
+		SystemNotice (role, "Visiting the church is a tiring process, please keep your hp and sp at 100%")
+		UseItemFailed ( role )
+		return
+	end 
+	if k == 0 then
+		if i > 0 then
+			local j = DelBagItem(role,3024,1)
+			if j == 1 then
+				MoveCity(role,"Church")
+				return
+			end
+		end
+	else
+		UseItemFailed ( role )
+	end
+		
+end
+
+function Jz_Script_jtsyzs (role, Item )
+	
+	local Now_Day = os.date("%d")
+	local Now_Month = os.date("%m")
+	local Now_Time = os.date("%H")
+	local NowMniuteNum= os.date("%M")	
+	local NowMiniuteNum= tonumber(Now_Miniute)	 	
+	local NowTimeNum = tonumber(Now_Time)
+	local NowDayNum = tonumber(Now_Day)
+	local NowMonthNum = tonumber(Now_Month)
+	local CheckDateNum = NowMonthNum * 1000000 + NowDayNum * 10000 + NowTimeNum*100+NowMniuteNum
+	--SystemNotice ( role , "timing is now"..CheckDateNum)
+
+	local item_old = GetChaItem2 ( role , 2 , 3066 )----教堂使用证
+	local old_month = GetItemAttr(item_old, ITEMATTR_VAL_STA)			
+	local old_day = GetItemAttr(item_old, ITEMATTR_VAL_STR)			  
+	local old_hour = GetItemAttr(item_old, ITEMATTR_VAL_CON)			 
+	local old_miniute = GetItemAttr(item_old, ITEMATTR_VAL_DEX)  
+	 
+	local CheckBook1Num = old_month * 1000000 + old_day * 10000 + old_hour*100+old_miniute
+	--SystemNotice ( role , "CheckBook1Num"..CheckBook1Num)
+	local CheckBook2Num = old_month * 1000000 + old_day * 10000 + (old_hour+2)*100+old_miniute
+	--SystemNotice ( role , "CheckBook2Num"..CheckBook2Num)
+	
+	local i = CheckBagItem(role,3066)
+	local k = ChaIsBoat(role)
+	if CheckDateNum >= CheckBook1Num  and CheckDateNum <= CheckBook2Num and k ==0 and  i >0 then
+		 DelBagItem(role,3066,1)
+		MoveCity(role,"Church")	
+	else
+		SystemNotice ( role , "咦?难道是时间不对")
+		UseItemFailed ( role )
+	end
+end
+
+function Jz_Script_jtsyzs (role, Item )
+	SystemNotice ( role , "Invitation Invitation Invitation" )
+	local Now_Day = os.date("%d")
+	local Now_Month = os.date("%m")
+	local Now_Time = os.date("%H")
+	SystemNotice ( role , "Wahaha" )
+	local NowMniuteNum= os.date("%M")	-分
+	local NowMiniuteNum= tonumber(Now_Miniute)	 	-分
+	local NowTimeNum = tonumber(Now_Time)
+	SystemNotice ( role , "huhuhuhu" )
+	local NowDayNum = tonumber(Now_Day)
+	SystemNotice ( role , "hehehehe" )
+	local NowMonthNum = tonumber(Now_Month)
+	SystemNotice ( role , "kekekeke" )
+	local CheckDateNum = NowMonthNum * 1000000 + NowDayNum * 10000 + NowTimeNum*100+NowMniuteNum
+	SystemNotice ( role , "timing is now"..CheckDateNum)
+	local old_type = GetItemAttr(item_old, ITEMATTR_MAXENERGY)	法式教堂
+
+	local item_old = GetChaItem2 ( role , 2 , 3078 )-请柬
+	local old_month = GetItemAttr(item_old, ITEMATTR_VAL_STA)		-月 	
+	local old_day = GetItemAttr(item_old, ITEMATTR_VAL_STR)			-日  
+	local old_hour = GetItemAttr(item_old, ITEMATTR_VAL_CON)			-时 
+	local old_miniute = GetItemAttr(item_old, ITEMATTR_VAL_DEX)  
+	 
+
+	local CheckBook1Num = old_month * 1000000 + old_day * 10000 + old_hour*100+old_miniute
+	SystemNotice ( role , "CheckBook1Num"..CheckBook1Num)
+	local CheckBook2Num = old_month * 1000000 + old_day * 10000 + (old_hour+2)*100+old_miniute
+	SystemNotice ( role , "CheckBook2Num"..CheckBook2Num)
+	
+	if CheckDateNum < CheckBook1Num then
+		SystemNotice ( role , "Please be patient, Church is not opened yet. Please come back according to the time listed" )
+		UseItemFailed ( role )
+		return
+	end
+	SystemNotice ( role , "Mother")
+	if CheckDateNum > CheckBook2Num then
+		SystemNotice ( role , "The wedding you want to visit is already finished, too bad" )
+		UseItemFailed ( role )
+		return
+	end
+	SystemNotice ( role , "Father")
+
+	local i = CheckBagItem(role,3066)教堂使用证书
+	local k = ChaIsBoat(role)
+	local hp = Hp(role)
+	local mxhp = Mxhp(role)
+	local sp = Sp(role)
+	local mxsp = Mxsp(role)
+	if sp < mxsp or hp < mxhp then 
+		SystemNotice (role, "Visiting the church is a tiring process, please keep your hp and sp at 100%")
+		UseItemFailed ( role )
+		return
+	end 
+	if k == 0 then
+		if i > 0 then
+			local j = DelBagItem(role,3066,1)-教堂使用证书
+			if j == 1 and old_type=1 then
+				MoveCity(role,"French Wedding Hall")
+			elseif	j == 1 and old_type=2 then
+				MoveCity(role,"Chinese style church")
+			if j == 1 then-elseif	j == 1 and old_type=3 then
+				MoveCity(role,"Church")
+				SystemNotice ( role , "Grandfather")
+			elseif	j == 1 and old_type=4 then
+				MoveCity(role,"Ground type Church")
+			end
+		end
+	else
+		UseItemFailed ( role )
+	end
+	SystemNotice ( role , "Granny")	
+end

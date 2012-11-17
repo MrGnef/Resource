@@ -1,0 +1,4 @@
+1	Sandbag Seller		1	11	7	500,3100		500,3100		270	Argent City	0	0	sandbag_1	0
+2	Chaos Administrator	1	10	0	2300,3600 	2300,3600	210	Argent City	20	0	kk_talk01		0
+3	Enfermera		1	29	3	2600,2900	2600,2900	180	Argent City	1	0	r_talk04	r_npcstate04
+4	Buffer !			1	11	7	2600,3100	2600,3100	180	Argent City	0	0	buff_12	0

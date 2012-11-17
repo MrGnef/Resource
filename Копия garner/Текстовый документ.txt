@@ -1,0 +1,2 @@
+180	Телепорт Ангел	1	284	5	217800,277800	217800,277800	270	Argent City	1	0	lol_telep	0
+0	Argent Teleporter And More	1	11	7	218700,277600	218700,277600	180	Argent City	1	0	lol_telep	0

@@ -1,0 +1,2 @@
+//Serial	NPC Name	NPC Type	Chrindex ID	Coordinates starting point	Coordination Goal	NPC placement	Spare 1	Spare 2	NPC Script	info manage	Test Status
+1	Huckinson	1	805	0	51300,26900	51300,26900	150	Lone Tower 6	49	0	el_talk07	0

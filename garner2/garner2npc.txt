@@ -1,0 +1,5 @@
+1	Argent Teleporter	1	430	15	9900,12700	9900,12700	180	garner2	1	0	JoJo_16	0
+7	Lv0 Expert Chaos Che	1	861	7	10400,9900	10400,9900	180	garner2	1	0	JoJo_17	0
+8	Rings Man	1	19	13	13600,13100	13600,13100	180	garner2	1	0	JoJo_18	0
+2	Chaos Argent Banker	1	16	0	12500,5600	1250,5600	180	garner2	1	0	r_talk13	0
+183	νορ αΰτεπ	1	18	15	13600,14400	13600,14400	360	garner2	1	0	d_talk021	0
