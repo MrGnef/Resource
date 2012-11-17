@@ -1,0 +1,24 @@
+1    Sword
+2    Greatsword
+3    Bow
+4    Firegun
+5    Blade
+6    Boxing Gloves
+7    Dagger
+8    Gold Pouch
+9    Short Staff
+10    Hammer
+11    Shield
+12    Arrow
+13    Ammunition
+14    Headgear
+18    Axe
+19    Metal Pickaxe
+20    Hair
+21    Face
+22    Armor
+23    Gloves
+24    Shoe
+25    Necklace
+26    Ring
+27        BossStone
